@@ -9,13 +9,13 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/status', (req, res) => {
+app.post('/register', (req, res) => {
     res.send({
-        message: 'hello world'
-    })
+        message: `Hello ${req.body.email}! You were registered! Have fun!`
+    });
 });
 
 app.listen(process.env.PORT || 8081, () => {
-    console.log('listening on a port');
-    
+    console.log('app started on port');
+        
 });
