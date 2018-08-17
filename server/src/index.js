@@ -15,7 +15,12 @@ app.post('/register', (req, res) => {
     });
 });
 
-app.listen(process.env.PORT || 8081, () => {
-    console.log('app started on port');
+app.listen(process.env.PORT || 8081, (e) => {
+    if(e){
+        console.log(e);
+        
+    }else{
+        console.log('app started on port');
+    }
         
 });
